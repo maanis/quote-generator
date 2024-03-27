@@ -1,7 +1,9 @@
 const quote = document.querySelector('.quote')
 const author = document.querySelector('.author')
 
-url = 'https://api.quotable.io/random?tags=technology,famous-quotes'
+
+
+url = 'https://api.quotable.io/random'
 
 async function getQuote(){
     let res = await fetch(url)
@@ -13,3 +15,12 @@ function openTweet(){
     window.open("https://twitter.com/intent/tweet?text=" + quote.innerHTML,"Tweet Window", "width=600, height=300")
 }
 getQuote()
+
+function copyText(){
+    navigator.clipboard.writeText(quote.innerHTML);
+}
+
+function soundText(){
+    let utterance = new SpeechSynthesisUtterance(`${quote.innerHTML} by ${author.innerHTML}`)
+    speechSynthesis.speak(utterance)
+}
