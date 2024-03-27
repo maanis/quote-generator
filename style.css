@@ -92,6 +92,7 @@ h2::before{
     display: flex;
     gap: 1.2rem;
     margin-top: 1.4rem;
+    margin-bottom: 1.6rem;
     /* background-color: red; */
     align-items: center;
 }
@@ -138,6 +139,22 @@ h2::before{
 }
 i{
     margin-right: 6px;
+}
+
+.copy-text{
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    bottom: -12px;
+    transform: scale(0.1);
+    transition: bottom 0.4s ease, transform 0.4s ease;
+    /* z-index: 999; */
+    visibility: hidden;
+}
+.appear{
+    bottom: 10px;
+    transform: scale(1);
+    visibility: visible;
 }
 
 @media screen and (max-width:982px) {

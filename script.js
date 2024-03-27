@@ -24,3 +24,13 @@ function soundText(){
     let utterance = new SpeechSynthesisUtterance(`${quote.innerHTML} by ${author.innerHTML}`)
     speechSynthesis.speak(utterance)
 }
+
+let copy_text = document.querySelector(".copy-text")
+let copy = document.querySelector(".copy")
+
+copy.addEventListener('click', ()=>{
+    copy_text.classList.add('appear')
+    setTimeout(() => {
+        copy_text.classList.remove('appear')
+    }, 1000);
+})
